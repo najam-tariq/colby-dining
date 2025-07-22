@@ -31,7 +31,7 @@ export function TimeDisplay() {
   return (
     <div className="flex items-center gap-3 text-center">
       <div className="p-3 rounded-full bg-primary/10">
-        <Clock className="h-6 w-6 text-primary" />
+        <Clock className="h-6 w-6 text-primary-foreground" />
       </div>
       <div>
         <div className="text-2xl font-bold text-primary-foreground">{timeString}</div>

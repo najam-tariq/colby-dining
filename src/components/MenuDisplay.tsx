@@ -1,26 +1,29 @@
 import { useState, useEffect } from "react";
-import { getCurrentMeal, getTodaysMenu, menuData, MenuItem } from "@/data/menuData";
+import { getCurrentMeal, getTodaysMenu, menuData, MenuItem, DayMenu } from "@/data/menuData";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Calendar, ChefHat, Utensils } from "lucide-react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 export function MenuDisplay() {
+  const todayMenu = getTodaysMenu();
   const initialMeal = getCurrentMeal();
+
+  const [selectedDate, setSelectedDate] = useState<string>(todayMenu?.date ?? menuData[0].date);
   const [currentMeal, setCurrentMeal] = useState(initialMeal);
-  const [todaysMenu, setTodaysMenu] = useState(getTodaysMenu());
   const [openTab, setOpenTab] = useState<string | undefined>(initialMeal ?? undefined);
 
   useEffect(() => {
     const timer = setInterval(() => {
       const mealNow = getCurrentMeal();
       setCurrentMeal(mealNow);
-      setTodaysMenu(getTodaysMenu());
       setOpenTab(mealNow ?? undefined);
     }, 60000); // Update every minute
 
     return () => clearInterval(timer);
   }, []);
+
+  const todaysMenu: DayMenu | undefined = menuData.find(d => d.date === selectedDate);
 
   if (!todaysMenu) {
     return (
@@ -157,15 +160,16 @@ export function MenuDisplay() {
           {menuData.map((day) => (
             <div
               key={day.date}
-              className={`p-6 rounded-lg border transition-all ${
-                day.date === todaysMenu.date
-                  ? 'bg-primary/5 border-primary'
+              onClick={() => setSelectedDate(day.date)}
+              className={`cursor-pointer p-6 rounded-lg border transition-all ${
+                day.date === selectedDate
+                  ? 'bg-primary/5 border-primary shadow-sm'
                   : 'bg-card border-border hover:border-primary/50'
               }`}
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-semibold text-lg">{day.dayOfWeek}</h3>
-                <Badge variant={day.date === todaysMenu.date ? 'default' : 'secondary'}>
+                <Badge variant={day.date === selectedDate ? 'default' : 'secondary'}>
                   {new Date(day.date).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',

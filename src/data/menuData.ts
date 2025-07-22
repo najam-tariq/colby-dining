@@ -23,7 +23,7 @@ export interface DayMenu {
 export const menuData: DayMenu[] = menuDataJson as DayMenu[];
 
 // Helper function: determine the current meal based on EST/EDT time
-export function getCurrentMeal(): 'breakfast' | 'lunch' | 'dinner' {
+export function getCurrentMeal(): 'breakfast' | 'lunch' | 'dinner' | null {
   const now = new Date();
   const est = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
   const hour = est.getHours();
@@ -37,8 +37,8 @@ export function getCurrentMeal(): 'breakfast' | 'lunch' | 'dinner' {
   // Dinner: 5 – 7 PM (17–19)
   if (hour >= 17 && hour < 19) return 'dinner';
 
-  // Outside service hours default to dinner so the UI still shows something
-  return 'dinner';
+  // Outside service hours – return null so no meal is auto-opened
+  return null;
 }
 
 // Helper: look up today’s menu (EST). Falls back to null if outside the csv range

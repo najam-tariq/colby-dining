@@ -5,13 +5,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Calendar, ChefHat, Utensils } from "lucide-react";
 
 export function MenuDisplay() {
-  const [currentMeal, setCurrentMeal] = useState(getCurrentMeal());
+  const initialMeal = getCurrentMeal();
+  const [currentMeal, setCurrentMeal] = useState(initialMeal);
   const [todaysMenu, setTodaysMenu] = useState(getTodaysMenu());
+  const [openTab, setOpenTab] = useState<string | undefined>(initialMeal ?? undefined);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentMeal(getCurrentMeal());
+      const mealNow = getCurrentMeal();
+      setCurrentMeal(mealNow);
       setTodaysMenu(getTodaysMenu());
+      setOpenTab(mealNow ?? undefined);
     }, 60000); // Update every minute
 
     return () => clearInterval(timer);
@@ -33,7 +37,7 @@ export function MenuDisplay() {
     );
   }
 
-  const getMealIcon = (meal: string) => {
+  const getMealIcon = (meal: string | null) => {
     switch (meal) {
       case 'breakfast':
         return <Calendar className="h-5 w-5" />;
@@ -78,36 +82,70 @@ export function MenuDisplay() {
       </div>
 
       {/* Current Meal Highlight */}
-      <div className="mb-8 text-center">
-        <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-lg">
-          {getMealIcon(currentMeal)}
-          <span className="font-medium text-primary">
-            Current Meal: {currentMeal.charAt(0).toUpperCase() + currentMeal.slice(1)}
-          </span>
-          <Badge variant="outline" className="text-xs">
-            {getMealTiming(currentMeal)}
-          </Badge>
+      {currentMeal && (
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-lg">
+            {getMealIcon(currentMeal)}
+            <span className="font-medium text-primary">
+              Current Meal: {currentMeal.charAt(0).toUpperCase() + currentMeal.slice(1)}
+            </span>
+            <Badge variant="outline" className="text-xs">
+              {getMealTiming(currentMeal)}
+            </Badge>
+          </div>
         </div>
-      </div>
+      )}
 
-      {/* Menu Cards */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <MenuCard
-          title="Breakfast"
-          items={todaysMenu.meals.breakfast}
-          isCurrentMeal={currentMeal === 'breakfast'}
-        />
-        <MenuCard
-          title="Lunch"
-          items={todaysMenu.meals.lunch}
-          isCurrentMeal={currentMeal === 'lunch'}
-        />
-        <MenuCard
-          title="Dinner"
-          items={todaysMenu.meals.dinner}
-          isCurrentMeal={currentMeal === 'dinner'}
-        />
-      </div>
+      {/* Collapsible Meal Sections */}
+      <Accordion
+        type="single"
+        collapsible
+        value={openTab}
+        onValueChange={(val) => setOpenTab(val || undefined)}
+        className="space-y-4"
+      >
+        {([
+          { key: 'breakfast', label: 'Breakfast', items: todaysMenu.meals.breakfast },
+          { key: 'lunch', label: 'Lunch', items: todaysMenu.meals.lunch },
+          { key: 'dinner', label: 'Dinner', items: todaysMenu.meals.dinner },
+        ] as { key: string; label: string; items: MenuItem[] }[]).map((meal) => (
+          <AccordionItem key={meal.key} value={meal.key} className="border rounded-lg">
+            <AccordionTrigger className="px-4">
+              <div className="flex items-center gap-2">
+                {getMealIcon(meal.key)}
+                <span className="font-semibold">
+                  {meal.label}
+                </span>
+                {meal.key === currentMeal && (
+                  <Badge className="ml-2 bg-gradient-primary text-primary-foreground">Current</Badge>
+                )}
+              </div>
+              <Badge variant="outline" className="ml-auto hidden sm:inline-block">
+                {getMealTiming(meal.key)}
+              </Badge>
+            </AccordionTrigger>
+            <AccordionContent className="px-4">
+              <div className="space-y-3">
+                {meal.items.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start justify-between p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
+                  >
+                    <span className="font-medium text-foreground leading-relaxed">
+                      {item.name}
+                    </span>
+                    {item.station && (
+                      <Badge variant="secondary" className="ml-2 text-xs">
+                        {item.station}
+                      </Badge>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
 
       {/* All Week Menu Preview */}
       <div className="mt-16">

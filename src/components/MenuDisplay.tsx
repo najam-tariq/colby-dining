@@ -3,6 +3,7 @@ import { getCurrentMeal, getTodaysMenu, menuData, MenuItem } from "@/data/menuDa
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Calendar, ChefHat, Utensils } from "lucide-react";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 export function MenuDisplay() {
   const initialMeal = getCurrentMeal();
@@ -125,21 +126,23 @@ export function MenuDisplay() {
               </Badge>
             </AccordionTrigger>
             <AccordionContent className="px-4">
-              <div className="space-y-3">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {meal.items.map((item, idx) => (
-                  <div
+                  <Card
                     key={idx}
-                    className="flex items-start justify-between p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
+                    className="bg-muted/30 hover:bg-muted/40 transition-all duration-200 transform hover:scale-[1.03] h-24 flex flex-col justify-center px-4"
                   >
-                    <span className="font-medium text-foreground leading-relaxed">
-                      {item.name}
-                    </span>
-                    {item.station && (
-                      <Badge variant="secondary" className="ml-2 text-xs">
-                        {item.station}
-                      </Badge>
-                    )}
-                  </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-medium text-foreground leading-relaxed line-clamp-2">
+                        {item.name}
+                      </span>
+                      {item.station && (
+                        <Badge variant="secondary" className="ml-2 text-xs">
+                          {item.station}
+                        </Badge>
+                      )}
+                    </div>
+                  </Card>
                 ))}
               </div>
             </AccordionContent>

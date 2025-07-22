@@ -1,0 +1,92 @@
+Meal,Day,Station,Items
+Breakfast,Monday,All,Omelet Bar; BYO - Breakfast Bowl; Hot Oatmeal; Cheesy Scrambled Egg; Pancakes; Scrambled Eggs; Triangle Potato Patty Fried; Turkey Sausage Link; Acremade Egg Sandwich
+Breakfast,Tuesday,All,Omelet Bar; BYO - Breakfast Bowl; Hot Oatmeal; French Toast; Scrambled Eggs; Tomato & Feta Strata; Bacon; Hash Brown Potatoes; Acremade Egg Sandwich
+Breakfast,Wednesday,All,Omelet Bar; BYO - Breakfast Bowl; Hot Oatmeal; Chocolate Chip Pancakes; Scrambled Eggs; French Toast Casserole; Home Fried Potatoes; Pork Sausage Patty; Acremade Egg Sandwich
+Breakfast,Thursday,All,Omelet Bar; BYO - BreakfastBowl; Hot Oatmeal; Broccoli Tomato Cheese Quiche; Scrambled Eggs; Croissant French Toast; Bacon; Maple Roasted Sweet Potatoes; Acremade Egg Sandwich
+Breakfast,Friday,All,Omelet Bar; BYO - Breakfast Bowl; Hot Oatmeal; Blueberry Pancakes; Western Scrambled Egg; Scrambled Eggs; Cajun Style Home Fries; Turkey Sausage Patty; Acremade Egg Sandwich
+Breakfast,Saturday,All,Omelet Bar; BYO - Breakfast Bowl; Hot Oatmeal; Cheesy Scrambled Egg; French Toast Sticks; Scrambled Eggs; Bacon; Triangle Potato Patty Fried; Sausage Gravy; Buttermilk Biscuits; Acremade Egg Sandwich
+Breakfast,Sunday,All,Omelet Bar; BYO - Breakfast Bowl; Hot Oatmeal; Pancakes; Scrambled Eggs; Pork Sausage Link; Tater Tots; Acremade Egg Sandwich
+Dinner,Monday,Grill,BBQ Wings; Cajun Wings; Garlic Parmesan Chicken Wings
+Dinner,Monday,Spoon & Fork,Jambalaya Pasta; Roasted Squashes; Corn; Buttermilk Cornbread
+Dinner,Monday,V2,Sweet Potato Chickpea Coconut Curry; Basmati Rice; Toasted Naan Flatbread
+Dinner,Monday,Inspired Eats,Garlicky Greens and Beans; Jerk Chicken - Allergen Friendly; Fried Jerk Plantain
+Dinner,Tuesday,Grill,Better Cheddar Burger; Tuna Melt on Sourdough; Sweet Potato Fries
+Dinner,Tuesday,Spoon & Fork,Chicken Marsala; Roasted Yukon Potatoes; Carrots & Green Beans; Green Peas
+Dinner,Tuesday,V2,Adobo BBQ Grilled Tofu; Montreal Roasted Vegetables; Lemon Dill Brown Rice
+Dinner,Tuesday,Inspired Eats,Bistro Burger - Allergen Friendly; Seasoned Potato Wedges; Carrots
+Dinner,Wednesday,Grill,American Grill Burger; Battered Onion Rings; Hand Cut French Fries
+Dinner,Wednesday,Spoon & Fork,Fire Roasted Cod; Peas & Roasted Mushrooms; Smoked Gouda Grits; Broccoli
+Dinner,Wednesday,V2,Roasted Tomato & Vegetable Risotto - All; Charred Lemon Kale; Green Peas
+Dinner,Wednesday,Inspired Eats,Oven Fried Chicken - Allergen Friendly; Brown Rice and Quinoa; Roasted Fennel and Vegetables
+Dinner,Thursday,Grill,Bratwurst; Chili & Cheese Hot Dog; Waffle Fries
+Dinner,Thursday,Spoon & Fork,Meat Lasagna; Broccoli Cauliflower & Carrot; Tossed Caesar Salad; Baked Garlic Bread
+Dinner,Thursday,V2,Ethiopian Lentils & Sweet Potatoes; Brown Rice Pilaf; Black Bean Tofu Chili
+Dinner,Thursday,Inspired Eats,Chicken Tacos - Allergen Friendly; Quinoa Salad with Spicy Lime Vinaigrette
+Dinner,Friday,Grill,Grilled Muenster Cheese Sandwich; Shrimp Roll; Hand Cut French Fries
+Dinner,Friday,Spoon & Fork,Chicken Tikka Masala; Scented Basmati Rice; Yellow Squash; Toasted Naan Flatbread
+Dinner,Friday,V2,Broccoli and Garlic Pasta; Tofu Puttanesca; Roasted Green Beans
+Dinner,Friday,Inspired Eats,Cuban Chicken Stew; Dirty Rice - Allergen Friendly
+Dinner,Saturday,Grill,Kielbasa; Pierogies with Onions; Shoestring Fries; Steamed Sauerkraut
+Dinner,Saturday,Spoon & Fork,Grilled BBQ Chicken Quarters; BBQ Vegetarian Baked Beans; Seasoned Mixed Vegetables; Cauliflower
+Dinner,Saturday,V2,Curried Lentil and Tofu Bowl
+Dinner,Saturday,Inspired Eats,Brown Sugar BBQ Pork; Dijon Red Potato Salad; Tomato Cucumber Green Pepper Salad
+Dinner,Sunday,Grill,Grilled Turkey Melt; Hot Dog; Hand Cut French Fries
+Dinner,Sunday,Spoon & Fork,Sweet Chili Eggplant; Thai Red Curry Chicken; Jasmine Rice Ginger Pilaf; Snap Peas
+Dinner,Sunday,V2,Vegan Meatball - Lentils; Multi Grain Penne Pasta; Pomodoro Sauce
+Dinner,Sunday,Inspired Eats,Turkey Meatloaf - Allergen Friendly; Lemon Green Beans; Mashed Potatoes
+Lunch,Monday,Grill,"Beef Cheesesteak; Grilled Chicken Breast; Fresh Hamburger; Turkey, Brie, & Cranberry Aioli Melt; Hand Cut French Fries"
+Lunch,Monday,Salad Bar,BYO - Ramen Bar; Hummus Bar
+Lunch,Monday,U Cook,BYO - Grain Bowl Bar
+Lunch,Monday,Fresh Stock,Chicken & Rice Soup; Gouda Corn Chowder; Ramen Dashi Broth
+Lunch,Monday,Spoon & Fork,Ham Brown Sugar Carver; Creamy Macaroni & Cheese; Peas & Roasted Mushrooms; Sweet Chili Rice Noodle Salad
+Lunch,Monday,V2,Vegetable Fajitas - Allergen Friendly; Broccoli & Cauliflower; Black Bean Salsa
+Lunch,Monday,Oven,Cheese Pizza; Mushroom Pizza; Pepperoni Pan Pizza
+Lunch,Monday,Inspired Eats,Mushroom White Bean Meatball Allergen Fr; Spaghetti & Marinara - Allergen Friendly; Spinach & Garlic
+Lunch,Tuesday,Grill,Fresh Hamburger; Hot Dog; Hot Italian Sub; Hand Cut French Fries
+Lunch,Tuesday,Salad Bar,BYO - Ramen Bar; Hummus Bar
+Lunch,Tuesday,U Cook,BYO - Grain Bowl Bar
+Lunch,Tuesday,Fresh Stock,Beef Vegetable Soup; Ramen Dashi Broth; Tomato Soup
+Lunch,Tuesday,Spoon & Fork,Barbecue Beef Brisket; Italian Salad; Green Beans & Peppers; Buttermilk Cornbread
+Lunch,Tuesday,V2,Fried Tofu with Hoisin Sauce; Beans Roasted Green (Haricot Vert)
+Lunch,Tuesday,Oven,BBQ Chicken Pizza; Cheese Pizza; Pepperoni Pan Pizza
+Lunch,Tuesday,Inspired Eats,Caribbean Style Stewed Lentils; Honey Mustard Baked Chicken; Roasted Carrots
+Lunch,Wednesday,Grill,Fresh Hamburger; Rachel Sandwich; Texas Cheeseburger; Black Bean Burger Sandwich; Hand Cut French Fries
+Lunch,Wednesday,Salad Bar,BYO - Ramen Bar; Hummus Bar
+Lunch,Wednesday,U Cook,BYO - Grain Bowl Bar
+Lunch,Wednesday,Fresh Stock,Broccoli Cheddar Soup; Chicken Noodle Soup; Ramen Dashi Broth
+Lunch,Wednesday,Spoon & Fork,Bourbon Chicken; Egg Fried Rice; Stir Fried Carrots with Mango & Ginger; Barley Apple Kale Salad
+Lunch,Wednesday,V2,Crispy Seasoned Hand Cut French Fries; Maple Syrup Roasted Brussels Sprouts
+Lunch,Wednesday,Oven,Cheese Pizza; Greek Pizza; Pepperoni Pan Pizza
+Lunch,Wednesday,Inspired Eats,Barbacoa Style Shredded Beef; Mexican Chopped Salad; Potato Salad w Smoky Citrus Vinaigrette
+Lunch,Thursday,Grill,Fresh Hamburger; Hot Dog; Pierogies with Onions; Hand Cut French Fries
+Lunch,Thursday,Salad Bar,BYO - Ramen Bar; Hummus Bar
+Lunch,Thursday,U Cook,BYO - GrainBowlBar
+Lunch,Thursday,Fresh Stock,Chili Con Carne; Ramen Dashi Broth; Black Bean Soup
+Lunch,Thursday,Spoon & Fork,Chipotle Glazed Pork Chops; Corn Cakes; Fried Potato Wedges; Marinated Cucumber Tomato & Corn Salad
+Lunch,Thursday,V2,Korean Fried Cauliflower; Carrots
+Lunch,Thursday,Oven,Cheese Pizza; Hawaiian Pizza; Pepperoni Pan Pizza
+Lunch,Thursday,Inspired Eats,Herbed Chicken Stew & Dumplings; Sauteed Snow Peas & Peppers
+Lunch,Friday,Grill,Grilled Cheese Sandwich - American; Fresh Hamburger; Kielbasa; Patty Melt; Hand Cut French Fries
+Lunch,Friday,Salad Bar,BYO - Ramen Bar; Hummus Bar
+Lunch,Friday,U Cook,BYO - Grain Bowl Bar
+Lunch,Friday,Fresh Stock,Ramen Dashi Broth; Soup Lentil Egg Drop (Eshkeneh-yeh Adas); French Onion Soup
+Lunch,Friday,Spoon & Fork,"Vegetable Egg Roll (3 Oz); Shrimp, Garlic & Chile Stir Fry; Vegetable Lo Mein; Spicy Korean Slaw"
+Lunch,Friday,V2,Zucchini Noodles & Marinara; Vegan Meatball - Lentils
+Lunch,Friday,Oven,Cheese Pizza; Italian Sausage Pizza; Pepperoni Pan Pizza
+Lunch,Friday,Inspired Eats,Chicken & Butternut Squash Curry; Indian Pumpkin Butter Chickpeas - Allergen Friendly; Basmati Rice Pilaf
+Lunch,Saturday,Grill,Bacon Egg & Cheese Biscuit Sandwich; Chicken & Pepperjack Quesadilla; Egg and Cheese on English Muffin; Fresh Hamburger; Sweet Potato Fries
+Lunch,Saturday,Salad Bar,BYO - Ramen Bar; Hummus Bar
+Lunch,Saturday,U Cook,BYO - Breakfast Hash
+Lunch,Saturday,Fresh Stock,Hot Oatmeal; Kale & Italian Sausage Soup; Ramen Dashi Broth
+Lunch,Saturday,Spoon & Fork,Buttermilk Fried Chicken; Smashed Parmesan Potatoes; Corn; Tossed Caesar Salad
+Lunch,Saturday,V2,Kale & Quinoa Power Salad
+Lunch,Saturday,Oven,Cheese Pizza; Pepperoni Pan Pizza; Taco Pizza
+Lunch,Saturday,Inspired Eats,Chopped Pork; Pozole De Frijole; Vegan Cornbread
+Lunch,Sunday,Grill,Golden Baked Buttermilk Biscuit; Apple Cream Cheese Stuffed French Toast; Fresh Hamburger; Smoked Gouda Onion Confit Burger; Hand Cut French Fries; Tater Tots; Sausage Gravy
+Lunch,Sunday,Salad Bar,BYO - Ramen Bar; Hummus Bar
+Lunch,Sunday,U Cook,BYO - Breakfast Hash
+Lunch,Sunday,Fresh Stock,Hot Oatmeal; Potato Leek Soup; Ramen Dashi Broth
+Lunch,Sunday,Spoon & Fork,Moroccan Braised Beef Tips; Large Garden Salad; Garlic Roasted Red Potatoes; Broccoli Cauliflower & Carrot
+Lunch,Sunday,V2,Green Peas; Mushroom Stroganoff Sauce
+Lunch,Sunday,Oven,Cheese Pizza; Pepperoni Pan Pizza; Vegetable Pizza
+Lunch,Sunday,Inspired Eats,Baked Sweet Potato; Cilantro Grilled Chicken Breast; Collard Greens Salad

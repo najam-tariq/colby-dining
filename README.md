@@ -1,1 +1,1 @@
-# colby-dining
+# Colby Dining

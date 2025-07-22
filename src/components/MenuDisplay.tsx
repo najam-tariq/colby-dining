@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { MenuCard } from "./MenuCard";
-import { getCurrentMeal, getTodaysMenu, menuData } from "@/data/menuData";
+import { getCurrentMeal, getTodaysMenu, menuData, MenuItem } from "@/data/menuData";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Calendar, ChefHat, Utensils } from "lucide-react";
 
 export function MenuDisplay() {
@@ -49,11 +49,11 @@ export function MenuDisplay() {
   const getMealTiming = (meal: string) => {
     switch (meal) {
       case 'breakfast':
-        return '7:00 AM - 11:00 AM';
+        return '7:00 AM – 10:00 AM';
       case 'lunch':
-        return '11:00 AM - 5:00 PM';
+        return '11:00 AM – 2:00 PM';
       case 'dinner':
-        return '5:00 PM - 9:00 PM';
+        return '5:00 PM – 7:00 PM';
       default:
         return '';
     }

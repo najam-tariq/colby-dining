@@ -28,8 +28,16 @@ export function getCurrentMeal(): 'breakfast' | 'lunch' | 'dinner' {
   const est = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
   const hour = est.getHours();
 
-  if (hour >= 7 && hour < 11) return 'breakfast';
-  if (hour >= 11 && hour < 17) return 'lunch';
+  // Breakfast: 7 – 10 AM
+  if (hour >= 7 && hour < 10) return 'breakfast';
+
+  // Lunch: 11 AM – 2 PM
+  if (hour >= 11 && hour < 14) return 'lunch';
+
+  // Dinner: 5 – 7 PM (17–19)
+  if (hour >= 17 && hour < 19) return 'dinner';
+
+  // Outside service hours default to dinner so the UI still shows something
   return 'dinner';
 }
 

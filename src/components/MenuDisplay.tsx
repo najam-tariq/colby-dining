@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getCurrentMeal, getTodaysMenu, menuData, MenuItem, DayMenu } from "@/data/menuData";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calendar, ChefHat, Utensils } from "lucide-react";
+import { Calendar, ChefHat, Utensils, Lock } from "lucide-react";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 export function MenuDisplay() {
@@ -12,15 +12,49 @@ export function MenuDisplay() {
   const [selectedDate, setSelectedDate] = useState<string>(todayMenu?.date ?? menuData[0].date);
   const [currentMeal, setCurrentMeal] = useState(initialMeal);
   const [openTab, setOpenTab] = useState<string | undefined>(initialMeal ?? undefined);
+  const [nextMealInfo, setNextMealInfo] = useState<{ meal: string; diffMinutes: number } | null>(null);
+
+  // Helper to calculate next meal start relative to current EST time
+  const calculateNextMeal = () => {
+    const now = new Date();
+    const est = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+
+    const periods: { meal: string; start: number }[] = [
+      { meal: 'breakfast', start: 7 },
+      { meal: 'lunch', start: 11 },
+      { meal: 'dinner', start: 17 },
+    ];
+
+    // Build potential next meal times for today
+    for (const p of periods) {
+      const startDate = new Date(est);
+      startDate.setHours(p.start, 0, 0, 0);
+      if (startDate > est) {
+        const diffMinutes = Math.round((startDate.getTime() - est.getTime()) / 60000);
+        return { meal: p.meal, diffMinutes };
+      }
+    }
+    // Otherwise next is tomorrow breakfast 7am
+    const tomorrow = new Date(est);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(7, 0, 0, 0);
+    const diffMinutes = Math.round((tomorrow.getTime() - est.getTime()) / 60000);
+    return { meal: 'breakfast', diffMinutes };
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
       const mealNow = getCurrentMeal();
       setCurrentMeal(mealNow);
       setOpenTab(mealNow ?? undefined);
+      setNextMealInfo(calculateNextMeal());
     }, 60000); // Update every minute
 
     return () => clearInterval(timer);
+  }, []);
+  // Initial next meal calculation
+  useEffect(() => {
+    setNextMealInfo(calculateNextMeal());
   }, []);
 
   const todaysMenu: DayMenu | undefined = menuData.find(d => d.date === selectedDate);
@@ -86,7 +120,7 @@ export function MenuDisplay() {
       </div>
 
       {/* Current Meal Highlight */}
-      {currentMeal && (
+      {currentMeal ? (
         <div className="mb-8 text-center">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-lg">
             {getMealIcon(currentMeal)}
@@ -96,6 +130,25 @@ export function MenuDisplay() {
             <Badge variant="outline" className="text-xs">
               {getMealTiming(currentMeal)}
             </Badge>
+          </div>
+        </div>
+      ) : (
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-muted/20 px-4 py-2 rounded-lg">
+            <Lock className="h-5 w-5 text-muted-foreground" />
+            <span className="font-medium text-muted-foreground">
+              Dining hall is currently closed;
+              {nextMealInfo && (
+                <> {nextMealInfo.meal.charAt(0) + nextMealInfo.meal.slice(1)} starts in{' '}
+                {Math.floor(nextMealInfo.diffMinutes / 60) > 0 && (
+                  <>
+                    {Math.floor(nextMealInfo.diffMinutes / 60)} hour{Math.floor(nextMealInfo.diffMinutes / 60) === 1 ? '' : 's'}{' '}
+                  </>
+                )}
+                {nextMealInfo.diffMinutes % 60} mins
+                </>
+              )}
+            </span>
           </div>
         </div>
       )}
